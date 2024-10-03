@@ -9,12 +9,12 @@ int main() {
     int smallest = numbers[0];   // Start by assuming the first element is the smallest
 
     // Loop through the array to find the largest and smallest numbers
-    for (int i = 1; i < 10; ++i) {
-        if (numbers[i] > largest) {
-            largest = numbers[i];  // Update largest if the current element is larger
+    for (int number: numbers) {
+        if (number > largest) {
+            largest = number;  // Update largest if the current element is larger
         }
-        if (numbers[i] < smallest) {
-            smallest = numbers[i];   // Update smallest if the current element is smaller
+        if (number < smallest) {
+            smallest = number;   // Update smallest if the current element is smaller
         }
     }
 
