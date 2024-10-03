@@ -4,23 +4,25 @@ int main() {
     // Initialise an array with 10 numbers
     int numbers[10] = { 25, 67, 12, 89, 34, 2, 56, 77, 43, 9 };
 
-    // Initialise variables to store the largest and smallest numbers
-    int largest = numbers[0];  // Start by assuming the first element is the largest
-    int smallest = numbers[0];   // Start by assuming the first element is the smallest
-
-    // Loop through the array to find the largest and smallest numbers
-    for (int i = 1; i < 10; ++i) {
-        if (numbers[i] > largest) {
-            largest = numbers[i];  // Update largest if the current element is larger
-        }
-        if (numbers[i] < smallest) {
-            smallest = numbers[i];   // Update smallest if the current element is smaller
+    // Implementing a simple bubble sort to sort the array in descending order
+    int n = 10;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (numbers[j] < numbers[j + 1]) {
+                // Swap if the current element is smaller than the next element
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
+            }
         }
     }
 
-    // Output the results
-    std::cout << "Largest number: " << largest << std::endl;
-    std::cout << "Smallest number: " << smallest << std::endl;
+    // Output the sorted array
+    std::cout << "Array sorted from largest to smallest:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
